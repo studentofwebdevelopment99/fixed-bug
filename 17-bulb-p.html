@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulb light</title>
+    <style>
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .button {
+        padding: 15px;
+        background-color: orangered;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black">
+    <img class="center center1" id="bulb" src="/src/bulb-off.jpg" alt="" />
+    <button id="button" class="center button">Turn on</button>
+
+    <!-- here is script tag -->
+    <script>
+      let bulb = document.getElementById("bulb");
+      let button = document.getElementById("button");
+
+      button.addEventListener("click", BulbFunc);
+
+      function BulbFunc(e) {
+        if (button.textContent.includes("ON")) {
+          bulb.src = "/src/bulb-on.jpg";
+          button.textContent = "Turn OFF";
+        } else {
+          bulb.src = "/src/bulb-off.jpg";
+          button.textContent = "Turn ON";
+        }
+      }
+    </script>
+  </body>
+</html>
